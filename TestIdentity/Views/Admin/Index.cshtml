@@ -1,0 +1,33 @@
+﻿@model IEnumerable< TestIdentity.Identity.ApplicationUser>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="panel panel-primay">
+
+     <table class="table table-stripped">
+
+         <tr >
+             <th>Id</th>
+             <th>UserName</th>
+             <th>Email</th>
+         </tr>
+         @if(Model.Count()==0)
+         {
+             <tr colspan="3">Kullanıcı Yok</tr>
+         }
+         else
+         {
+             foreach(var item in Model)
+             {
+                 <tr>
+                     <td>@item.Id</td>
+                     <td>@item.UserName</td>
+                     <td>@item.Email</td>
+                 </tr>
+             }
+         }
+     </table>
+</div>
